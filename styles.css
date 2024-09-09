@@ -1,0 +1,107 @@
+/* CSS Variables */
+:root {
+    --primary-color: #00bfff; /* Light blue */
+    --secondary-color: #1e90ff; /* Dodger blue */
+    --background-color: #1a1a2e; /* Dark blue background */
+    --text-color: #ffffff; /* White text */
+    --dark-background: #333; /* Dark grey */
+    --hover-shadow: rgba(0, 204, 255, 0.6); /* Light blue shadow */
+    --card-background: #2a2a3e; /* Slightly lighter dark blue */
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --border-radius: 5px;
+    --shadow-size: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#calendar {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 var(--shadow-size) var(--hover-shadow);
+    padding: 20px;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+#calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+}
+
+.calendar-day {
+    border: 1px solid var(--dark-background);
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+}
+
+.day-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.work-block-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+}
+
+.work-block {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* This makes the height equal to the width, creating a square */
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    line-height: 30px; /* Adjust this if needed */
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.work-block > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-block:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 var(--shadow-size) var(--hover-shadow);
+}
+
+.work-block[contenteditable="true"] {
+    outline: none;
+    background-color: black;
+    color: var(--text-color);
+}
+
+
+
